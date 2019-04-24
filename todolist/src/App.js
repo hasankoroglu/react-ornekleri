@@ -4,18 +4,23 @@ import ToDoForm from "./todoForm";
 import Header from "./inc/header";
 import Footer from "./inc/footer";
 
+const myTasks = [
+  "Kitap Oku",
+  "Film İzle",
+  "CS:Go Oyna",
+  "Erken Uyu"
+];
+
 class App extends Component {
+  addTask(val){
+    myTasks.push(val);
+    console.log(myTasks);
+  }
   render() {
-    const myTasks = [
-      "Kitap Oku",
-      "Film İzle",
-      "CS:Go Oyna",
-      "Erken Uyu"
-    ];
     return (
       <div className="content">
         <Header />
-        <ToDoForm />
+        <ToDoForm addTask={this.addTask}/>
         <TodoList myTasks={myTasks} />
         <Footer />
       </div>

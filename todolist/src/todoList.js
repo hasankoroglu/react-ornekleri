@@ -5,7 +5,7 @@ class TodoList extends React.Component{
         const items_left = 0;
         const items = this.props.myTasks.map((elem,i)=>{
             return(
-                <li>
+                <li key={i}>
                     <span className="id">{i+1}</span>
                     <span className="title">{elem}</span>
                     <span className="type" />
