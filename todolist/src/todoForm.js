@@ -1,11 +1,7 @@
 import React from "react";
 
 class ToDoForm extends React.Component{
-    constructor(){
-        super();
-        this.addTask = this.addTask.bind(this);
-    }
-    addTask(e){
+    addTask = (e) => {
         e.preventDefault();
         const inp = document.getElementById("todoInput");
         const val = inp.value;
@@ -16,11 +12,11 @@ class ToDoForm extends React.Component{
         return(
             <div>
                 <div className="todo type1">
-                    <form className="input-wrapper" onSubmit={e => this.addTask(e)}>
-                        <input id="todoInput" type="text" className="add-todo" />
+                    <form className="input-wrapper" onSubmit={this.addTask}>
+                        <input id="todoInput" type="text" className="add-todo" autoComplete="off" />
                     </form>
                 </div>
-                <button type="button" className="add-btn" onClick={e => this.addTask(e)}></button>
+                <button type="button" className="add-btn" onClick={this.addTask}></button>
             </div>
         );
     }
