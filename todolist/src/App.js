@@ -16,6 +16,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {myTasks:arrMyTasks};
+    console.log(true || (true && false));
   }
 
   addTask = (val) => {
@@ -37,6 +38,11 @@ class App extends Component {
     this.setState({myTasks:arrMyTasks});
   }
 
+  filterTasks = (param) => {
+    let newArrTasks = arrMyTasks.filter(task=>(task.status!==param||(task.status!==param&&task.status===param)));
+    this.setState({myTasks:newArrTasks});
+  }
+
   render() {
     return (
       <div className="content">
@@ -44,7 +50,8 @@ class App extends Component {
         <ToDoForm addTask={this.addTask}/>
         <TodoList myTasks={this.state.myTasks} 
                   doneTask={this.doneTask} 
-                  removeTask={this.removeTask} />
+                  removeTask={this.removeTask}
+                  filterTasks={this.filterTasks} />
         <Footer />
       </div>
     );

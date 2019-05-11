@@ -9,9 +9,8 @@ class TodoList extends React.Component {
     this.props.removeTask(e.target.parentNode.id);
   };
 
-  filterList = param => {
-    console.log(param);
-    //let newArray = this.props.myTasks.filter(task => task.status === param);
+  filterTasks = (param) => {
+    this.props.filterTasks(param);
   };
 
   render() {
@@ -39,9 +38,9 @@ class TodoList extends React.Component {
           </div>
           <div className="right">
             <ul>
-              <li><span className="active">All</span></li>
-              <li><span>Active</span></li>
-              <li><span>Completed</span></li>
+              <li><span onClick={() => this.filterTasks("all")} className="active">All</span></li>
+              <li><span onClick={() => this.filterTasks("active")}>Active</span></li>
+              <li><span onClick={() => this.filterTasks("passive")}>Completed</span></li>
             </ul>
           </div>
         </div>
