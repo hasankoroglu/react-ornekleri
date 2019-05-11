@@ -16,12 +16,12 @@ class App extends Component {
   constructor(){
     super();
     this.state = {myTasks:arrMyTasks};
-    console.log(true || (true && false));
   }
 
   addTask = (val) => {
-    arrMyTasks.push({text:val,status:"passive"});
-    this.setState({myTasks:arrMyTasks});
+    let updatedList = this.state.myTasks;
+    updatedList.push({text:val,status:"passive"});
+    this.setState({myTasks:updatedList});
   }
 
   doneTask = (taskId) => {
