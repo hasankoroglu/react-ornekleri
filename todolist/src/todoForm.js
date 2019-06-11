@@ -16,11 +16,11 @@ class ToDoForm extends React.Component{
         return(
             <div>
                 <div className="todo type1">
-                    <form className="input-wrapper" onSubmit={e => this.addTask(e)}>
+                    <form className="input-wrapper" onSubmit={this.addTask}>
                         <input id="todoInput" type="text" className="add-todo" />
                     </form>
                 </div>
-                <button type="button" className="add-btn" onClick={e => this.addTask(e)}></button>
+                <button type="button" className="add-btn" onClick={this.addTask}></button>
             </div>
         );
     }
