@@ -8,7 +8,9 @@ class FormContainer extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(event) {
+  
+  handleChange = (event) => {
+    event.preventDefault();
     this.setState({ [event.target.id]: event.target.value });
   }
   render() {
