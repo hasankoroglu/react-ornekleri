@@ -15,6 +15,7 @@ class FormContainer extends Component {
   }
   render() {
     const { seo_title } = this.state;
+    console.log(seo_title);
     return (
       <form id="article-form">
         <Input
