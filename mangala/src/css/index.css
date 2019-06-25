@@ -1,0 +1,83 @@
+
+div.woodenBG{
+  background: transparent url("../img/wood.jpg") no-repeat right top;
+  width: 1280px;
+  height: 400px;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  border-radius: 10px;
+}
+
+div.woodenBG > div:first-child, div.woodenBG > div:last-child{
+  width:160px;
+  height:400px;
+}
+
+div.pits{
+  width:100%;
+}
+
+div.pits > div{
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 15px 5px;
+}
+
+div.pits > div > span {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 30px 5px;
+  -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  -moz-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+}
+
+.store {
+  width:140px;
+  height:350px;
+  display: inline-block;
+  margin: 30px 10px;
+  -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  -moz-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  border-radius: 50px;
+}
+
+div.gemsPit{
+  width: 105px;
+  height: 105px;
+  margin: 18px 18px;
+}
+
+div.gemsPit4x4{
+  width: 65px;
+  height: 65px;
+  margin: 40px 40px;
+}
+
+div.gemsPit > div {
+  float:left;
+}
+
+div.gemsStore{
+  width: 130px;
+  height: 315px;
+  margin: 15px 5px; 
+}
+
+img.gem {
+  width:30px;
+  height:30px;
+  margin: 1px;
+}
+
+button.btn {
+  width:100px;
+  height:50px;
+  margin:20px auto;
+  display: block;
+}
