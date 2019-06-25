@@ -1,20 +1,19 @@
 import React from "react";
-import gem from "../img/gem.png"
+import Gem from "./Gem"
 
-function Pit(){
+function Pit(props){
+    let arrGems = [];
+    let i=0;
+    if (props.gems>0) {
+        for (i;i<props.gems;i++){
+            arrGems.push(<Gem key={i}/>);
+        }
+    }
     return(
         <div>
             <span>
                 <div className="gemsPit">
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
-                <img className="gem" src={gem} alt="Gem" />
+                    {arrGems}
                 </div>
             </span>
         </div>

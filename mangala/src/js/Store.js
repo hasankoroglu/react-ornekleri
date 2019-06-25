@@ -6,42 +6,6 @@ function Store() {
         <div>
             <div className="store">
                 <div className="gemsStore">
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
-                    <img className="gem" src={gem} alt="Gem" />
                 </div>
             </div>
         </div>
