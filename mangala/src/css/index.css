@@ -13,7 +13,7 @@ code {
 }
 
 div.woodenBG{
-  background: transparent url("wood.jpg") no-repeat right top;
+  background: transparent url("../img/wood.jpg") no-repeat right top;
   width: 1280px;
   height: 400px;
   margin: auto;
@@ -58,4 +58,22 @@ div.pits > div > span {
   -moz-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
   box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
   border-radius: 50px;
+}
+
+div.gemsPit{
+  width: 105px;
+  height: 105px;
+  margin: 18px 18px;
+}
+
+div.gemsStore{
+  width: 130px;
+  height: 315px;
+  margin: 15px 5px; 
+}
+
+img.gem {
+  width:30px;
+  height:30px;
+  margin: 1px;
 }
