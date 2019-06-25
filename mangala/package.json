@@ -13,29 +13,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-<<<<<<< HEAD
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.6",
-    "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.13.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "prop-types": "^15.7.2",
-    "webpack": "^4.33.0",
-    "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.7.1"
-=======
   "eslintConfig": {
     "extends": "react-app"
->>>>>>> 99b8f9f8854e3c0dc0ab685cc10d76654316a040
   },
   "browserslist": {
     "production": [
