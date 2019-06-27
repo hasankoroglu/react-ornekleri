@@ -16,30 +16,45 @@ function App() {
     {id:11,gems:0},
     {id:12,gems:0}
   ];
-
+  
   const [state,setState] = useState(pits);
   const [buttonText,setBtnText] = useState("Başla");
-  
+
+  console.log("-------------------");
+  console.log("app " + state[0].gems);
+
+  let tmpState = [];
+
+  const changeObj = (array,value) => {
+    let newArray = array.map(x=>{
+      let newObj = {};
+      newObj.id=x.id;
+      newObj.gems=value;
+      return newObj;
+    });
+    return newArray;
+  };
+
   const startReset = () => {
     if (buttonText==='Başla') {
       setBtnText("Baştan Başla");
-      state.map(stt=>(stt.gems=4));
+      tmpState = changeObj(state,4);
     } else {
       setBtnText("Başla");
-      state.map(stt=>(stt.gems=0));
+      tmpState = changeObj(state,0);
     }
+    setState(tmpState);
   }
+
 
 useEffect(()=>{
   setState(state);
+  console.log("app efct " + state[0].gems);
 },[state]);
-
-console.log("app");
-console.log(state[8].gems);
 
   return (
     <div>
-        <Board state={state} setState={setState} />
+        <Board state={state} setState={setState}/>
         <button type="button" className="btn" onClick={()=>startReset()}>{buttonText}</button>
     </div>
   );

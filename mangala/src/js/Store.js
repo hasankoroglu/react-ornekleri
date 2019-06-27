@@ -1,5 +1,5 @@
 import React from "react";
-import gem from "../img/gem.png";
+//import gem from "../img/gem.png";
 
 function Store(props) {
 let numberOfGems = props.gems||0;

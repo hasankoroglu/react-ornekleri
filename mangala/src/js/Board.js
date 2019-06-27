@@ -4,19 +4,23 @@ import Pit from "./Pit";
 
 function Board(props) {
   const [state,setState] = useState(props.state);
-
+  console.log("board " + state[0].gems);
+  console.log(props.setState);
+  
   useEffect(()=>{
     setState(props.state);
   },[props]);
-  
-  console.log("board");
-  console.log(state[8].gems);
+
+let pits = [];
+  state.forEach(x => {
+    pits.push(<Pit key={x.id} id={x.id} gems={x.gems} state={state} setState={props.setState}/>);
+  });
+
+
   return (
     <div className="woodenBG">
       <Store />
-      <div className="pits">{
-          state.map(stt=>(<Pit key={stt.id} id={stt.id} gems={stt.gems} state={state} setState={props.setState}/>))
-      }</div>
+      <div className="pits">{pits}</div>
       <Store />
     </div>
   );

@@ -3,7 +3,7 @@ import Gem from "./Gem";
 
 export default function Pit(props) {
   const [state,setState] = useState(props.state);
-  //console.log(state);
+
   let arrGems = [];
   let pitID = props.id;
   let tmpPits = state;
@@ -11,12 +11,12 @@ export default function Pit(props) {
   let outGems;
   let gems = props.gems;
 
+  console.log("pit " + state[0].gems);
+  console.log(props.setState);
+
   useEffect(() => {
     setState(props.state);
   }, [props]);
-
-  console.log("pit");
-  console.log(state[8].gems);
 
   for (i; i < gems; i++) {
     arrGems.push(<Gem key={i} />);
@@ -40,7 +40,7 @@ export default function Pit(props) {
     for (i; i < outGems; i++) {
       tmpPits[pitID + i].gems = tmpPits[pitID + i].gems + 1;
     }
-
+    console.log(tmpPits);
     props.setState(tmpPits);
   };
 
