@@ -17,14 +17,6 @@ function App() {
     {id:12,gems:0}
   ];
 
-  const changePitsGems = (id,gems) => {
-    let newPits = state;
-    newPits.map(pit=>(
-      pit.id=id?pit.gems=gems:null
-    ));
-    setState(newPits);
-  }
-
   const [state,setState] = useState(pits);
   const [buttonText,setBtnText] = useState("Başla");
   
@@ -42,9 +34,12 @@ useEffect(()=>{
   setState(state);
 },[state]);
 
+console.log("app");
+console.log(state[8].gems);
+
   return (
     <div>
-        <Board state={state} setState={setState}/>
+        <Board state={state} setState={setState} />
         <button type="button" className="btn" onClick={()=>startReset()}>{buttonText}</button>
     </div>
   );
