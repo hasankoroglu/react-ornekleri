@@ -25,7 +25,7 @@ div.pits > div{
   margin: 15px 5px;
 }
 
-div.pits > div > span {
+.shadow {
   height: 140px;
   width: 140px;
   border-radius: 50%;
@@ -34,6 +34,7 @@ div.pits > div > span {
   -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
   -moz-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
   box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  cursor: pointer;
 }
 
 .store {
@@ -59,7 +60,7 @@ div.gemsPit4x4{
   margin: 40px 40px;
 }
 
-div.gemsPit > div {
+div.gemsPit > div, div.gemsPit4x4 > div {
   float:left;
 }
 
