@@ -3,19 +3,19 @@ import Store from "./Store";
 import Pit from "./Pit";
 
 function Board(props) {
-    let isStarted = props.start;
-    let pits = [];
-    let numberOfGems = isStarted?4:0;
+  let pits = [];
+  let gems = props.start ? 4 : 0;;
 
-    for (let i=0;i < 12;i++){
-        pits.push(<Pit key={i} gems={numberOfGems}/>);
-    }
+  for (let i = 0; i < 12; i++) {
+    pits.push(<Pit key={i} gems={gems}/>);
+  }
+
   return (
-        <div className="woodenBG">
-            <Store />
-            <div className="pits">{pits}</div>
-            <Store />
-        </div>
+    <div className="woodenBG">
+      <Store />
+      <div className="pits">{pits}</div>
+      <Store />
+    </div>
   );
 }
 

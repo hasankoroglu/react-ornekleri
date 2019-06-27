@@ -34,7 +34,6 @@ div.pits > div{
   -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
   -moz-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
   box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
-  cursor: pointer;
 }
 
 .store {
