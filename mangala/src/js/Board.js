@@ -3,17 +3,14 @@ import Store from "./Store";
 import Pit from "./Pit";
 
 function Board(props) {
-  let pits = [];
-  let gems = props.start ? 4 : 0;;
-
-  for (let i = 0; i < 12; i++) {
-    pits.push(<Pit key={i} gems={gems}/>);
-  }
+  let pits = props.state;
 
   return (
     <div className="woodenBG">
       <Store />
-      <div className="pits">{pits}</div>
+      <div className="pits">{
+          pits.map(pit=>(<Pit key={pit.id} id={pit.id} gems={pit.gems} setState={props.setState}/>))
+      }</div>
       <Store />
     </div>
   );

@@ -1,24 +1,50 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Board from "./Board";
 
 function App() {
-  const [buttonText,setState] = useState("Başla");
-  const [sttStart,setStart] = useState(0);
+  let pits = [
+    {id:1,gems:0},
+    {id:2,gems:0},
+    {id:3,gems:0},
+    {id:4,gems:0},
+    {id:5,gems:0},
+    {id:6,gems:0},
+    {id:7,gems:0},
+    {id:8,gems:0},
+    {id:9,gems:0},
+    {id:10,gems:0},
+    {id:11,gems:0},
+    {id:12,gems:0}
+  ];
+
+  const changePitsGems = (id,gems) => {
+    let newPits = state;
+    newPits.map(pit=>(
+      pit.id=id?pit.gems=gems:null
+    ));
+    setState(newPits);
+  }
+
+  const [state,setState] = useState(pits);
+  const [buttonText,setBtnText] = useState("Başla");
   
   const startReset = () => {
     if (buttonText==='Başla') {
-      setState("Baştan Başla");
-      setStart(1);
+      setBtnText("Baştan Başla");
+      state.map(stt=>(stt.gems=4));
     } else {
-      setState("Başla");
-      setStart(0);
+      setBtnText("Başla");
+      state.map(stt=>(stt.gems=0));
     }
   }
 
+useEffect(()=>{
+  setState(state);
+},[state]);
 
   return (
     <div>
-        <Board start={sttStart}/>
+        <Board state={state} setState={setState}/>
         <button type="button" className="btn" onClick={()=>startReset()}>{buttonText}</button>
     </div>
   );
