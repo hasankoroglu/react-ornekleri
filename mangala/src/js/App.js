@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Board from "./Board";
 
 function App() {
@@ -17,11 +17,9 @@ function App() {
     {id:12,gems:0}
   ];
   
-  const [state,setState] = useState(pits);
+  const [appState,setAppState] = useState(pits);
   const [buttonText,setBtnText] = useState("Başla");
-
-  console.log("-------------------");
-  console.log("app " + state[0].gems);
+  console.log("app - " + appState[8].gems);
 
   let tmpState = [];
 
@@ -38,23 +36,17 @@ function App() {
   const startReset = () => {
     if (buttonText==='Başla') {
       setBtnText("Baştan Başla");
-      tmpState = changeObj(state,4);
+      tmpState = changeObj(appState,4);
     } else {
       setBtnText("Başla");
-      tmpState = changeObj(state,0);
+      tmpState = changeObj(appState,0);
     }
-    setState(tmpState);
+    setAppState(tmpState);
   }
-
-
-useEffect(()=>{
-  setState(state);
-  console.log("app efct " + state[0].gems);
-},[state]);
 
   return (
     <div>
-        <Board state={state} setState={setState}/>
+        <Board appState={appState} setAppState={setAppState}/>
         <button type="button" className="btn" onClick={()=>startReset()}>{buttonText}</button>
     </div>
   );

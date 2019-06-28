@@ -3,17 +3,16 @@ import Store from "./Store";
 import Pit from "./Pit";
 
 function Board(props) {
-  const [state,setState] = useState(props.state);
-  console.log("board " + state[0].gems);
-  console.log(props.setState);
-  
+  const [boardState,setBoardState] = useState(props.appState);
+  console.log("board - " + boardState[8].gems);
   useEffect(()=>{
-    setState(props.state);
+    setBoardState(props.appState);
   },[props]);
 
+
 let pits = [];
-  state.forEach(x => {
-    pits.push(<Pit key={x.id} id={x.id} gems={x.gems} state={state} setState={props.setState}/>);
+boardState.forEach(x => {
+    pits.push(<Pit key={x.id} id={x.id} gems={x.gems} boardState={boardState} setAppState={props.setAppState}/>);
   });
 
 

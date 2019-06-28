@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import Gem from "./Gem";
 
 export default function Pit(props) {
-  const [state,setState] = useState(props.state);
+  const [pitState,setPitState] = useState(props.boardState);
 
+  console.log("pit - " + pitState[8].gems);
+
+  let tmpPitState = pitState;
   let arrGems = [];
   let pitID = props.id;
-  let tmpPits = state;
   let i = 0;
   let outGems;
   let gems = props.gems;
 
-  console.log("pit " + state[0].gems);
-  console.log(props.setState);
-
   useEffect(() => {
-    setState(props.state);
-  }, [props]);
+    setPitState(props.boardState);
+  }, [props.boardState]);
+
 
   for (i; i < gems; i++) {
     arrGems.push(<Gem key={i} />);
@@ -35,13 +35,13 @@ export default function Pit(props) {
 
     let i = 0;
 
-    tmpPits[pitID - 1].gems = tmpPits[pitID].gems - outGems;
+    tmpPitState[pitID - 1].gems = tmpPitState[pitID].gems - outGems;
 
     for (i; i < outGems; i++) {
-      tmpPits[pitID + i].gems = tmpPits[pitID + i].gems + 1;
+      tmpPitState[pitID + i].gems = tmpPitState[pitID + i].gems + 1;
     }
-    console.log(tmpPits);
-    props.setState(tmpPits);
+
+    props.setAppState(tmpPitState);
   };
 
   return (
