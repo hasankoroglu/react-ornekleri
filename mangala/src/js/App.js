@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import Board from "./Board";
 
 function App() {
@@ -19,7 +19,15 @@ function App() {
   
   const [appState,setAppState] = useState(pits);
   const [buttonText,setBtnText] = useState("Başla");
+  
+  useEffect(()=>{
+    setAppState(appState);
+  },[appState]);
+  
+  console.log("-------------------------");
   console.log("app - " + appState[8].gems);
+
+
 
   let tmpState = [];
 

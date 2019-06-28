@@ -4,8 +4,6 @@ import Gem from "./Gem";
 export default function Pit(props) {
   const [pitState,setPitState] = useState(props.boardState);
 
-  console.log("pit - " + pitState[8].gems);
-
   let tmpPitState = pitState;
   let arrGems = [];
   let pitID = props.id;
@@ -15,7 +13,9 @@ export default function Pit(props) {
 
   useEffect(() => {
     setPitState(props.boardState);
-  }, [props.boardState]);
+  }, [props]);
+
+  console.log("pit - " + pitState[8].gems);
 
 
   for (i; i < gems; i++) {
