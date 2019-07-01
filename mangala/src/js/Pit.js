@@ -11,12 +11,7 @@ export default function Pit(props) {
   let outGems;
   let gems = props.gems;
 
-  useEffect(() => {
-    setPitState(props.boardState);
-  }, [props]);
-
-  console.log("pit - " + pitState[8].gems);
-
+  
 
   for (i; i < gems; i++) {
     arrGems.push(<Gem key={i} />);
@@ -41,12 +36,14 @@ export default function Pit(props) {
       tmpPitState[pitID + i].gems = tmpPitState[pitID + i].gems + 1;
     }
 
-    props.setAppState(tmpPitState);
+console.log(tmpPitState);
+
+    props.setBoardState(tmpPitState);
   };
 
   return (
     <div>
-      <div className="shadow" style={style} onClick={click}>
+      <div className="shadow" style={style} onClick={()=>click()}>
         <div className="gemsPit">{arrGems}</div>
       </div>
       {pitID}
