@@ -2,6 +2,7 @@
 
 # dependencies
 /mangala/node_modules
+/react-hooks/node_modules
 /.pnp
 .pnp.js
 
