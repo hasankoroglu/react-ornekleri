@@ -49,7 +49,6 @@ function App() {
     }
 
     setPits(pits => {
-      console.log("CLICKED PIT :", { pit: pits[index], index });
       if (pits[index].gems !== 0) {
         pits[index].gems--;
         pits[index + 1].gems++;
