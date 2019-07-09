@@ -17,8 +17,6 @@ function App() {
     { gems: 0 }
   ];
 
-  let tmpPitsGems = [];
-
   const startResetFalse = { val: 0, text: "Başla" };
   const startResetTrue = { val: 1, text: "Sıfırla" };
 
@@ -44,40 +42,33 @@ function App() {
     }
   };
 
-  const onPitClick = index => {
-    let hede = [
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 3 },
-      { gems: 4 },
-      { gems: 4 },
-      { gems: 4 }
-    ];
-    tmpPitsGems = pitsGems;
-    let currentGems = tmpPitsGems[index].gems;
-    tmpPitsGems[index].gems--;
+  const onPitClick = param => {
+/*     const tmpPitsGems = pitsGems;
+    let currentGems = tmpPitsGems[param].gems;
+    tmpPitsGems[param].gems--;
     let nextPits = currentGems-1;
-    let i = index+1;
+    let i = param+1;
     for(i;i<nextPits;i++){
       tmpPitsGems[i].gems++;
-    }
+    } */
     //console.log("hede : ", hede);
-    console.log("tmpPitsGems : ",tmpPitsGems);
-    setPitsGems(tmpPitsGems);
-};
+    // console.log("tmpPitsGems : ",tmpPitsGems);
 
+    setPitsGems(pitsGems=>
+      pitsGems.map((pit,index)=>{
+        if(param===index){pit.gems=pit.gems+1}
+        return pit;
+      })
+    );
+};
+console.log(pitsGems)
   return (
     <div>
-      <Board pitsGems={pitsGems} onPitClick={index => onPitClick(index)} />
+      {/* <Board pitsGems={pitsGems} onPitClick={index => onPitClick(index)} /> */}
       <button type="button" className="btn" onClick={() => startResetClick()}>
         {startReset.text}
       </button>
+      <button type="button" onClick={()=>onPitClick(8)}>fede</button>
     </div>
   );
 }
