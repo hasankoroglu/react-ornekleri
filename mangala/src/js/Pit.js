@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Gem from "./Gem";
 
-export default function Pit({ index, id, gems, onPitClick }) {
+export default function Pit(props) {
+  const [gems, setGems] = useState(props.gems);
   const style = gems > 0 ? { cursor: "pointer" } : {};
+  const funcOnClick = () =>
+    gems > 0 ? props.onPitClick(props.index) : null;
 
-  const createPit = length => {
-    let pitComponents = [];
-    for (let i = 0; i < length; i++) {
-      pitComponents.push(<Gem key={i} />);
-    }
-    return pitComponents;
-  };
+  let i = 0,
+    arrGems = [];
+
+  for (i; i < gems; i++) {
+    arrGems.push(<Gem key={i} />);
+  }
+
+  useEffect(() => {
+    setGems(props.gems);
+  }, [props.gems]);
 
   return (
     <div>
-      <div className="shadow" style={style} onClick={() => onPitClick(index)}>
-        <div className="gemsPit">{createPit(gems)}</div>
+      <div className="shadow" style={style} onClick={funcOnClick}>
+        <div className="gemsPit">{arrGems}</div>
       </div>
-      {id}
+      {gems} - {props.gems}
     </div>
   );
 }

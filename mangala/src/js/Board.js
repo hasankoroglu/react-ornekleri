@@ -1,20 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Store from "./Store";
 import Pit from "./Pit";
 
-function Board({ pits, onPitClick }) {
+function Board(props) {
+  const [pitsGems, setPitsGems] = useState(props.pitsGems);
+  
+//  console.log(props.pitsGems);
+
+  useEffect(() => {
+    setPitsGems(props.pitsGems);
+  }, [props.pitsGems]);
+
   return (
     <div className="woodenBG">
       <Store />
       <div className="pits">
-        {pits.map((pit, index) => {
+        {pitsGems.map((pit, index) => {
           return (
             <Pit
               key={index}
               index={index}
-              id={pit.id}
               gems={pit.gems}
-              onPitClick={onPitClick}
+              onPitClick={props.onPitClick}
             />
           );
         })}
