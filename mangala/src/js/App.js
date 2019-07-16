@@ -3,12 +3,11 @@ import Board from "./Board";
 import { Button, Modal, Form } from "react-bootstrap";
 
 function App() {
-  const initialPitsGems = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-  const [pitsGems, setPitsGems] = useState(initialPitsGems);
+  const [pitsGems, setPitsGems] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [gameStatus, setGameStatus] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [players, setPlayers] = useState({user1:'',user2:''});
+  const [playersTurn, setPlayersTurn] = useState('');
 
   const handleModalClose = () => setShowModal(false);
   const handleModalShow = () => setShowModal(true);
@@ -16,6 +15,7 @@ function App() {
   const startGame = () => {
     changePitGems(4);
     setGameStatus(true);
+    setPlayersTurn(`${players.user1}`);
     handleModalClose();
   };
 
@@ -49,15 +49,17 @@ function App() {
       }
       return tmpPitsGems;
     });
+    playersTurn===players.user1 ? setPlayersTurn(`${players.user2}`) : setPlayersTurn(`${players.user1}`);
   };
 
   return (
     <div>
+      <h1>{players.user2}</h1>
       <Board pitsGems={pitsGems} onPitClick={index => onPitClick(index)} />
+      <h1>{players.user1}</h1>
       <Button className="startReset" type="button" onClick={gameStatus ? resetGame : handleModalShow}>
         {gameStatus ? "Baştan Başla" : "Başla"}
       </Button>
-      {console.log(players)}
       <Modal show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton>
           <Modal.Title>Oyuncu İsimleri</Modal.Title>
