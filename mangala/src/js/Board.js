@@ -4,8 +4,6 @@ import Pit from "./Pit";
 
 function Board(props) {
   const [pitsGems, setPitsGems] = useState(props.pitsGems);
-  
-  console.log(props.pitsGems);
 
   useEffect(() => {
     setPitsGems(props.pitsGems);
@@ -20,7 +18,7 @@ function Board(props) {
             <Pit
               key={index}
               index={index}
-              gems={pit.gems}
+              gems={pit}
               onPitClick={props.onPitClick}
             />
           );

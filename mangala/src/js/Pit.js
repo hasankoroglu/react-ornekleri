@@ -23,7 +23,6 @@ export default function Pit(props) {
       <div className="shadow" style={style} onClick={funcOnClick}>
         <div className="gemsPit">{arrGems}</div>
       </div>
-      {gems} - {props.gems}
     </div>
   );
 }
