@@ -14,14 +14,16 @@ export default function Pit(props) {
     arrGems.push(<Gem key={i} />);
   }
 
+let pitClass = (gems > 4) ? "gemsPitLarge" : "gemsPitSmall";
+
   useEffect(() => {
     setGems(props.gems);
   }, [props.gems]);
 
   return (
     <div>
-      <div className="shadow" style={style} onClick={funcOnClick}>
-        <div className="gemsPit">{arrGems}</div>
+      <div className="pitShadow" style={style} onClick={funcOnClick}>
+        <div className={pitClass}>{arrGems}</div>
       </div>
     </div>
   );

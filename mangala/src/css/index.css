@@ -25,7 +25,7 @@ div.pits > div{
   margin: 15px 5px;
 }
 
-.shadow {
+div.pitShadow {
   height: 140px;
   width: 140px;
   border-radius: 50%;
@@ -47,19 +47,19 @@ div.pits > div{
   border-radius: 50px;
 }
 
-div.gemsPit{
+div.gemsPitLarge{
   width: 105px;
   height: 105px;
-  margin: 18px 18px;
+  margin: 18px;
 }
 
-div.gemsPit4x4{
-  width: 65px;
-  height: 65px;
-  margin: 40px 40px;
+div.gemsPitSmall{
+  width: 95px;
+  height: 95px;
+  margin: 35px;
 }
 
-div.gemsPit > div, div.gemsPit4x4 > div {
+div.gemsPitLarge > div, div.gemsPitSmall > div {
   float:left;
 }
 
@@ -75,9 +75,7 @@ img.gem {
   margin: 1px;
 }
 
-button.btn {
-  width:100px;
-  height:50px;
+button.startReset {
   margin:20px auto;
   display: block;
 }
