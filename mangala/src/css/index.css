@@ -1,5 +1,4 @@
-
-div.woodenBG{
+div.woodenBG {
   background: transparent url("../img/wood.jpg") no-repeat right top;
   width: 1280px;
   height: 400px;
@@ -9,16 +8,17 @@ div.woodenBG{
   border-radius: 10px;
 }
 
-div.woodenBG > div:first-child, div.woodenBG > div:last-child{
-  width:160px;
-  height:400px;
+div.woodenBG > div:first-child,
+div.woodenBG > div:last-child {
+  width: 160px;
+  height: 400px;
 }
 
-div.pits{
-  width:100%;
+div.pits {
+  width: 100%;
 }
 
-div.pits > div{
+div.pits > div {
   width: 150px;
   height: 150px;
   float: left;
@@ -31,55 +31,74 @@ div.pitShadow {
   border-radius: 50%;
   display: inline-block;
   margin: 30px 5px;
-  -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
-  -moz-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
-  box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
 }
 
 .store {
-  width:140px;
-  height:350px;
+  width: 140px;
+  height: 350px;
   display: inline-block;
   margin: 30px 10px;
-  -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
-  -moz-box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
-  box-shadow: inset 5px 5px 15px 5px rgba(0,0,0,0.6);
+  -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
   border-radius: 50px;
 }
 
-div.gemsPitLarge{
+div.gemsPitLarge {
   width: 105px;
   height: 105px;
   margin: 18px;
 }
 
-div.gemsPitSmall{
+div.gemsPitSmall {
   width: 95px;
   height: 95px;
   margin: 35px;
 }
 
-div.gemsPitLarge > div, div.gemsPitSmall > div {
-  float:left;
+div.gemsPitLarge > div,
+div.gemsPitSmall > div {
+  float: left;
 }
 
-div.gemsStore{
+div.gemsStore {
   width: 130px;
   height: 315px;
-  margin: 15px 5px; 
+  margin: 15px 5px;
 }
 
 img.gem {
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
   margin: 1px;
 }
 
 button.startReset {
-  margin:20px auto;
+  margin: 20px auto;
   display: block;
 }
 
-h1 {
-  text-align:center;
+div.headingDiv {
+  text-align: center;
+}
+
+span.wrapper {
+  position: relative;
+}
+
+span.heading {
+  font-size: 55px;
+}
+
+img.show {
+  position: absolute;
+  left: -100px;
+  bottom: -5px;
+}
+
+img.hide {
+  display: none;
 }
