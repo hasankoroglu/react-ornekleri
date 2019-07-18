@@ -7,7 +7,7 @@ function Store(props) {
   return (
     <div>
       <div className="store">
-        <div className="gemsStore" />
+        <div className="gemsStore"></div>
         {numberOfGems}
       </div>
     </div>

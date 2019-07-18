@@ -18,7 +18,9 @@ const PlayerName = props => {
 
 function App() {
   const initialPlayers = { user1: "", user2: "" };
-  const [pitsGems, setPitsGems] = useState([0,0,0,0,0,0,0,0,0,0,0,0]);
+  const initialGems = [0,0,0,0,0,0,0,0,0,0,0,0];
+  const initialGemsStart = [4,4,4,4,4,4,4,4,4,4,4,4];
+  const [pitsGems, setPitsGems] = useState(initialGems);
   const [gameStatus, setGameStatus] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [players, setPlayers] = useState(initialPlayers);
@@ -36,7 +38,7 @@ function App() {
       event.stopPropagation();
     } else {
       setValidated(true);
-      changePitGems(4);
+      setPitsGems(initialGemsStart);
       setGameStatus(true);
       setPlayersTurn(players.user1);
       handleModalClose();
@@ -47,20 +49,12 @@ function App() {
   };
 
   const resetGame = () => {
-    changePitGems(0);
+    setPitsGems(initialGems);
     setPlayers(initialPlayers);
     setPlayersTurn("");
     setGameStatus(false);
   };
 
-  const changePitGems = gems => {
-    setPitsGems(pitsGems =>
-      pitsGems.map(pit => {
-        pit = gems;
-        return pit;
-      })
-    );
-  };
 
   const handleInputChange = event => {
     const { id, value } = event.target;
