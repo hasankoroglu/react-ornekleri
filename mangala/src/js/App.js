@@ -6,7 +6,7 @@ import arrowPng from "../img/arrow.png";
 const PlayerName = props => {
   return (
     <div className="headingDiv">
-      <span class="wrapper">
+      <span className="wrapper">
       <img src={arrowPng} alt="" className={props.playersTurn.length>0?(props.playersTurn === props.playersName ? "show" : "hide"):"hide"} />
       <span className="heading">
         {props.playersName}
@@ -18,8 +18,8 @@ const PlayerName = props => {
 
 function App() {
   const initialPlayers = { user1: "", user2: "" };
-  const initialGems = [0,0,0,0,0,0,0,0,0,0,0,0];
-  const initialGemsStart = [4,4,4,4,4,4,4,4,4,4,4,4];
+  const initialGems = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  const initialGemsStart = [0,4,4,4,4,4,4,4,4,4,4,4,4,0];
   const [pitsGems, setPitsGems] = useState(initialGems);
   const [gameStatus, setGameStatus] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -64,11 +64,24 @@ function App() {
   const onPitClick = param => {
     setPitsGems(pitsGems => {
       let tmpPitsGems = [...pitsGems];
-      let nextPits = tmpPitsGems[param] - 1;
-      tmpPitsGems[param] = 1;
+      let nextPits, nextIndex;
+      let currentPitGems = tmpPitsGems[param];
+      if (currentPitGems>1) {
+        nextPits = currentPitGems -1;
+        currentPitGems = 1;
+      } else {
+        nextPits = 1;
+        currentPitGems = 0;
+      }
+      tmpPitsGems[param] = currentPitGems;
       let i = 1;
       for (i; i <= nextPits; i++) {
-        tmpPitsGems[param + i]++;
+        nextIndex = param + i;
+        if (nextIndex) {
+          
+        }else {
+          tmpPitsGems[nextIndex]++;
+        }
       }
       return tmpPitsGems;
     });
@@ -81,7 +94,7 @@ function App() {
   return (
     <div>
       <PlayerName playersTurn={playersTurn} playersName={players.user2} />
-      <Board pitsGems={pitsGems} onPitClick={index => onPitClick(index)} />
+      <Board pitsGems={pitsGems} onPitClick={index => onPitClick(index)}/>
       <PlayerName playersTurn={playersTurn} playersName={players.user1} />
       <Button
         className="startReset"

@@ -24,6 +24,7 @@ let pitClass = (gems > 4) ? "gemsPitLarge" : "gemsPitSmall";
     <div>
       <div className="pitShadow" style={style} onClick={funcOnClick}>
         <div className={pitClass}>{arrGems}</div>
+        {props.index}
       </div>
     </div>
   );

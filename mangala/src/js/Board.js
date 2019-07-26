@@ -11,7 +11,7 @@ function Board(props) {
 
   return (
     <div className="woodenBG">
-      <Store />
+      <Store gems={pitsGems[0]} />
       <div className="pits">
         {pitsGems.map((pit, index) => {
           return (
@@ -24,7 +24,7 @@ function Board(props) {
           );
         })}
       </div>
-      <Store />
+      <Store gems={pitsGems[pitsGems.length]}/>
     </div>
   );
 }
