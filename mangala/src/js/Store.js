@@ -1,14 +1,20 @@
 import React from "react";
-//import gem from "../img/gem.png";
+import Gem from "./Gem";
 
 function Store(props) {
-  let numberOfGems = props.gems || 0;
+  let numberOfGems = props.gems;
+
+  let i = 0;
+  let arrGems = [];
+
+  for (i; i < numberOfGems; i++) {
+    arrGems.push(<Gem key={i} />);
+  }
 
   return (
     <div>
       <div className="store">
-        <div className="gemsStore"></div>
-        {numberOfGems}
+        <div className="gemsStore">{arrGems}</div>
       </div>
     </div>
   );

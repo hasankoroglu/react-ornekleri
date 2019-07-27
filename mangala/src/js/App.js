@@ -19,7 +19,7 @@ const PlayerName = props => {
 function App() {
   const initialPlayers = { user1: "", user2: "" };
   const initialGems = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-  const initialGemsStart = [0,4,4,4,4,4,4,4,4,4,4,4,4,0];
+  const initialGemsStart = [4,4,4,4,4,4,4,4,4,4,4,4,0,0];
   const [pitsGems, setPitsGems] = useState(initialGems);
   const [gameStatus, setGameStatus] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -66,24 +66,39 @@ function App() {
       let tmpPitsGems = [...pitsGems];
       let nextPits, nextIndex;
       let currentPitGems = tmpPitsGems[param];
-      if (currentPitGems>1) {
-        nextPits = currentPitGems -1;
-        currentPitGems = 1;
-      } else {
-        nextPits = 1;
-        currentPitGems = 0;
-      }
-      tmpPitsGems[param] = currentPitGems;
-      let i = 1;
-      for (i; i <= nextPits; i++) {
-        nextIndex = param + i;
-        if (nextIndex) {
-          
-        }else {
-          tmpPitsGems[nextIndex]++;
+      if (playersTurn === players.user1) {
+        if (currentPitGems>1) {
+          nextPits = currentPitGems-1;
+          currentPitGems = 1;
+        } else {
+          nextPits = 1;
+          currentPitGems = 0;
         }
+        tmpPitsGems[param] = currentPitGems;
+        let i = 1;
+        for (i; i <= nextPits; i++) {
+          /*
+          param = 11
+          nextIndex = 12
+          nextIndex = 13 --> 5 --> 8
+          nextIndex = 14 --> 4 --> 10
+          nextIndex = 15 --> 3 --> 12
+          nextIndex = 16 --> 2 --> 14
+          */
+          nextIndex = param + i;
+          if (param>5&&param<12) {
+            if (nextIndex>12) {
+              nextIndex = nextIndex-8;
+            }
+
+          }
+
+
+        }
+        return tmpPitsGems;
+      } else {
+
       }
-      return tmpPitsGems;
     });
 
     setPlayersTurn(

@@ -59,8 +59,9 @@ div.gemsPitSmall {
   margin: 35px;
 }
 
-div.gemsPitLarge > div,
-div.gemsPitSmall > div {
+div.gemsPitLarge div,
+div.gemsPitSmall div,
+div.gemsStore div {
   float: left;
 }
 
