@@ -74,6 +74,7 @@ function App() {
       let tmpPitsGems = [...pitsGems];
       let nextPits;
       let currentPitGems = tmpPitsGems[param];
+      let lastIndex, lastIndexGems;
 
       if (currentPitGems > 1) {
         nextPits = currentPitGems - 1;
@@ -99,6 +100,18 @@ function App() {
             tmpPitsGems[nextIndex]++;
           }
         }
+        lastIndex = nextIndex;
+        lastIndexGems = tmpPitsGems[lastIndex];
+        if (lastIndex > -1 && lastIndex < 6 && lastIndexGems % 2 === 0) {
+          tmpPitsGems[12] = tmpPitsGems[12] + lastIndexGems;
+          tmpPitsGems[lastIndex] = 0;
+        }
+        if (lastIndex > 5 && lastIndex < 12 && lastIndexGems === 1) {
+          tmpPitsGems[12] =
+            tmpPitsGems[12] + lastIndexGems + tmpPitsGems[lastIndex - 6];
+          tmpPitsGems[lastIndex] = 0;
+          tmpPitsGems[lastIndex - 6] = 0;
+        }
         return tmpPitsGems;
       } else {
         let i = 1;
@@ -115,23 +128,56 @@ function App() {
             tmpPitsGems[nextIndex]++;
           }
         }
+        lastIndex = nextIndex;
+        lastIndexGems = tmpPitsGems[lastIndex];
+        if (lastIndex > 5 && lastIndex < 12 && lastIndexGems % 2 === 0) {
+          tmpPitsGems[13] = tmpPitsGems[13] + lastIndexGems;
+          tmpPitsGems[lastIndex] = 0;
+        }
+        if (lastIndex > -1 && lastIndex < 6 && lastIndexGems === 1) {
+          tmpPitsGems[13] =
+            tmpPitsGems[13] + lastIndexGems + tmpPitsGems[lastIndex + 6];
+          tmpPitsGems[lastIndex] = 0;
+          tmpPitsGems[lastIndex + 6] = 0;
+        }
         return tmpPitsGems;
       }
     });
 
-    console.log(nextIndex);
     setPlayersTurn(playersTurn => {
-      if (
-        !(nextIndex === 12 && playersTurn === players.user1) ||
-        !(nextIndex === 13 && playersTurn === players.user2)
-      ) {
-        return playersTurn = players.user1 ? players.user2 : players.user1;
+      let currentPlayer = playersTurn;
+      if (!(nextIndex === 12 || nextIndex === 13)) {
+        currentPlayer =
+          playersTurn === players.user1 ? players.user2 : players.user1;
       }
+      return currentPlayer;
     });
   };
 
+  let pitsEmpty = false,
+    i = 0,
+    sumOfUser1sPits = 0,
+    sumOfUser2sPits = 0;
+  for (i; i < 6; i++) {
+    sumOfUser1sPits += pitsGems[i];
+  }
+
+  i = 6;
+
+  for (i; i < 12; i++) {
+    sumOfUser2sPits += pitsGems[i];
+  }
+
+  pitsEmpty =
+    (sumOfUser1sPits === 0 || sumOfUser2sPits === 0) &&
+    pitsGems[12] + pitsGems[13] !== 0
+      ? true
+      : false;
+
   return (
     <div>
+      {!pitsEmpty ? (
+        <div>
       <PlayerName playersTurn={playersTurn} playersName={players.user2} />
       <Board
         pitsGems={pitsGems}
@@ -188,6 +234,14 @@ function App() {
           </Button>
         </Modal.Footer>
       </Modal>
+      </div>
+      ):(
+        <div>
+        <span className="heading">{players.user1} : {pitsGems[12]}</span>
+        <br />
+        <span className="heading">{players.user2} : {pitsGems[13]}</span>
+        </div>
+      )}
     </div>
   );
 }

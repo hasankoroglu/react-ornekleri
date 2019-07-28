@@ -12,7 +12,7 @@ export default function Pit(props) {
       : playersTurn === players.user2 && (index > -1 && index < 6)
       ? props.onPitClick(index)
       : null;
-  const pitClass = gems > 4 ? "gemsPitLarge" : "gemsPitSmall";
+  const pitClass = gems > 4 ? gems > 9 ? "gemsPitLarge" : "gemsPitMedium" : "gemsPitSmall";
   const pitOnClickStyle =
     playersTurn === players.user1 && (index > 5 && index < 12)
       ? { cursor: "pointer" }

@@ -55,27 +55,34 @@ div.gemsPitLarge {
   margin: 18px;
 }
 
+div.gemsPitMedium {
+  width: 77px;
+  height: 77px;
+  margin: 32px;
+}
+
 div.gemsPitSmall {
-  width: 65px;
-  height: 65px;
-  margin: 35px;
+  width: 60px;
+  height: 60px;
+  margin: 45px;
 }
 
 div.gemsPitLarge div,
+div.gemsPitMedium div,
 div.gemsPitSmall div,
 div.gemsStore div {
   float: left;
 }
 
 div.gemsStore {
-  width: 130px;
+  width: 120px;
   height: 315px;
-  margin: 15px 5px;
+  margin: 15px 20px;
 }
 
 img.gem {
-  width: 30px;
-  height: 30px;
+  width: 23px;
+  height: 23px;
   margin: 1px;
 }
 
