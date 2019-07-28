@@ -15,6 +15,7 @@ function Store(props) {
     <div>
       <div className="store">
         <div className="gemsStore">{arrGems}</div>
+        {i}
       </div>
     </div>
   );

@@ -7,10 +7,18 @@ const PlayerName = props => {
   return (
     <div className="headingDiv">
       <span className="wrapper">
-      <img src={arrowPng} alt="" className={props.playersTurn.length>0?(props.playersTurn === props.playersName ? "show" : "hide"):"hide"} />
-      <span className="heading">
-        {props.playersName}
-      </span>
+        <img
+          src={arrowPng}
+          alt=""
+          className={
+            props.playersTurn.length > 0
+              ? props.playersTurn === props.playersName
+                ? "show"
+                : "hide"
+              : "hide"
+          }
+        />
+        <span className="heading">{props.playersName}</span>
       </span>
     </div>
   );
@@ -18,8 +26,8 @@ const PlayerName = props => {
 
 function App() {
   const initialPlayers = { user1: "", user2: "" };
-  const initialGems = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-  const initialGemsStart = [4,4,4,4,4,4,4,4,4,4,4,4,0,0];
+  const initialGems = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  const initialGemsStart = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0];
   const [pitsGems, setPitsGems] = useState(initialGems);
   const [gameStatus, setGameStatus] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -55,61 +63,82 @@ function App() {
     setGameStatus(false);
   };
 
-
   const handleInputChange = event => {
     const { id, value } = event.target;
     setPlayers({ ...players, [id]: value });
   };
 
   const onPitClick = param => {
+    let nextIndex;
     setPitsGems(pitsGems => {
       let tmpPitsGems = [...pitsGems];
-      let nextPits, nextIndex;
+      let nextPits;
       let currentPitGems = tmpPitsGems[param];
+
+      if (currentPitGems > 1) {
+        nextPits = currentPitGems - 1;
+        currentPitGems = 1;
+      } else {
+        nextPits = 1;
+        currentPitGems = 0;
+      }
+
+      tmpPitsGems[param] = currentPitGems;
+
       if (playersTurn === players.user1) {
-        if (currentPitGems>1) {
-          nextPits = currentPitGems-1;
-          currentPitGems = 1;
-        } else {
-          nextPits = 1;
-          currentPitGems = 0;
-        }
-        tmpPitsGems[param] = currentPitGems;
         let i = 1;
         for (i; i <= nextPits; i++) {
-          /*
-          param = 11
-          nextIndex = 12
-          nextIndex = 13 --> 5 --> 8
-          nextIndex = 14 --> 4 --> 10
-          nextIndex = 15 --> 3 --> 12
-          nextIndex = 16 --> 2 --> 14
-          */
           nextIndex = param + i;
-          if (param>5&&param<12) {
-            if (nextIndex>12) {
-              nextIndex = nextIndex-8;
+          if (param > 5 && param < 12) {
+            if (nextIndex > 12) {
+              nextIndex = 18 - nextIndex;
+              if (nextIndex < 0) {
+                nextIndex = nextIndex + 7;
+              }
             }
-
+            tmpPitsGems[nextIndex]++;
           }
-
-
         }
         return tmpPitsGems;
       } else {
-
+        let i = 1;
+        for (i; i <= nextPits; i++) {
+          nextIndex = param - i;
+          if (param > -1 && param < 6) {
+            if (nextIndex < 0) {
+              if (nextIndex === -1) {
+                nextIndex = 13;
+              } else {
+                nextIndex = 4 - nextIndex;
+              }
+            }
+            tmpPitsGems[nextIndex]++;
+          }
+        }
+        return tmpPitsGems;
       }
     });
 
-    setPlayersTurn(
-      playersTurn === players.user1 ? players.user2 : players.user1
-    );
+    console.log(nextIndex);
+    setPlayersTurn(playersTurn => {
+      if (
+        !(nextIndex === 12 && playersTurn === players.user1) ||
+        !(nextIndex === 13 && playersTurn === players.user2)
+      ) {
+        return playersTurn = players.user1 ? players.user2 : players.user1;
+      }
+    });
   };
 
   return (
     <div>
       <PlayerName playersTurn={playersTurn} playersName={players.user2} />
-      <Board pitsGems={pitsGems} onPitClick={index => onPitClick(index)}/>
+      <Board
+        pitsGems={pitsGems}
+        onPitClick={index => onPitClick(index)}
+        playersTurn={playersTurn}
+        players={players}
+      />
       <PlayerName playersTurn={playersTurn} playersName={players.user1} />
       <Button
         className="startReset"

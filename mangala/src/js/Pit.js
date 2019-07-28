@@ -3,9 +3,22 @@ import Gem from "./Gem";
 
 export default function Pit(props) {
   const [gems, setGems] = useState(props.gems);
-  const style = gems > 0 ? { cursor: "pointer" } : {};
-  const funcOnClick = () =>
-    gems > 0 ? props.onPitClick(props.index) : null;
+  const [playersTurn, setPlayersTurn] = useState(props.playersTurn);
+  const players = props.players;
+  const index = props.index;
+  const pitOnClick = index =>
+    playersTurn === players.user1 && (index > 5 && index < 12)
+      ? props.onPitClick(index)
+      : playersTurn === players.user2 && (index > -1 && index < 6)
+      ? props.onPitClick(index)
+      : null;
+  const pitClass = gems > 4 ? "gemsPitLarge" : "gemsPitSmall";
+  const pitOnClickStyle =
+    playersTurn === players.user1 && (index > 5 && index < 12)
+      ? { cursor: "pointer" }
+      : playersTurn === players.user2 && (index > -1 && index < 6)
+      ? { cursor: "pointer" }
+      : {};
 
   let i = 0,
     arrGems = [];
@@ -14,18 +27,25 @@ export default function Pit(props) {
     arrGems.push(<Gem key={i} />);
   }
 
-let pitClass = (gems > 4) ? "gemsPitLarge" : "gemsPitSmall";
-
   useEffect(() => {
     setGems(props.gems);
-  }, [props.gems]);
+    setPlayersTurn(props.playersTurn);
+  }, [props]);
 
   return (
     <div>
-      <div className="pitShadow" style={style} onClick={funcOnClick}>
-        <div className={pitClass}>{arrGems}</div>
-        {props.index}
-      </div>
+      {gems > 0 ? (
+        <div
+          className="pitShadow"
+          style={pitOnClickStyle}
+          onClick={() => pitOnClick(index)}
+        >
+          <div className={pitClass}>{arrGems}</div>
+          {index}
+        </div>
+      ) : (
+        <div className="pitShadow"></div>
+      )}
     </div>
   );
 }

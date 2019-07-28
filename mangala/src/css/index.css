@@ -34,6 +34,7 @@ div.pitShadow {
   -webkit-box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
   box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
 
 .store {
@@ -45,6 +46,7 @@ div.pitShadow {
   -moz-box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
   box-shadow: inset 5px 5px 15px 5px rgba(0, 0, 0, 0.6);
   border-radius: 50px;
+  text-align: center;
 }
 
 div.gemsPitLarge {
@@ -54,8 +56,8 @@ div.gemsPitLarge {
 }
 
 div.gemsPitSmall {
-  width: 95px;
-  height: 95px;
+  width: 65px;
+  height: 65px;
   margin: 35px;
 }
 
