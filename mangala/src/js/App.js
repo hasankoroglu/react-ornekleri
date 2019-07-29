@@ -117,7 +117,7 @@ function App() {
         for (i; i < 12; i++) {
           sumOfUser1sGems += tmpPitsGems[i];
         }
-console.log("1:",sumOfUser1sGems);
+
         i = 0;
         if (sumOfUser1sGems === 0) {
           for (i; i < 6; i++) {
@@ -161,7 +161,7 @@ console.log("1:",sumOfUser1sGems);
         for (i; i < 6; i++) {
           sumOfUser2sGems += tmpPitsGems[i];
         }
-        console.log("2:",sumOfUser2sGems);
+        
         i = 6;
         if (sumOfUser2sGems === 0) {
           for (i; i < 12; i++) {
