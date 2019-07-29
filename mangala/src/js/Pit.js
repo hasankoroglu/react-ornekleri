@@ -41,7 +41,6 @@ export default function Pit(props) {
           onClick={() => pitOnClick(index)}
         >
           <div className={pitClass}>{arrGems}</div>
-          {index}
         </div>
       ) : (
         <div className="pitShadow"></div>

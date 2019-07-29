@@ -34,6 +34,7 @@ function App() {
   const [players, setPlayers] = useState(initialPlayers);
   const [playersTurn, setPlayersTurn] = useState("");
   const [validated, setValidated] = useState(false);
+  const [pitsEmpty, setPitsEmpty] = useState(false);
 
   const handleModalClose = () => setShowModal(false);
   const handleModalShow = () => setShowModal(true);
@@ -72,9 +73,8 @@ function App() {
     let nextIndex;
     setPitsGems(pitsGems => {
       let tmpPitsGems = [...pitsGems];
-      let nextPits;
+      let nextPits, lastIndex, lastIndexGems, sumOfUser1sGems=0, sumOfUser2sGems=0;
       let currentPitGems = tmpPitsGems[param];
-      let lastIndex, lastIndexGems;
 
       if (currentPitGems > 1) {
         nextPits = currentPitGems - 1;
@@ -112,6 +112,22 @@ function App() {
           tmpPitsGems[lastIndex] = 0;
           tmpPitsGems[lastIndex - 6] = 0;
         }
+
+        i = 6;
+        for (i; i < 12; i++) {
+          sumOfUser1sGems += tmpPitsGems[i];
+        }
+console.log("1:",sumOfUser1sGems);
+        i = 0;
+        if (sumOfUser1sGems === 0) {
+          for (i; i < 6; i++) {
+            sumOfUser2sGems += tmpPitsGems[i];
+            tmpPitsGems[i] = 0;
+          }
+          tmpPitsGems[12] = tmpPitsGems[12] + sumOfUser2sGems;
+          setPitsEmpty(true);
+        }
+
         return tmpPitsGems;
       } else {
         let i = 1;
@@ -140,6 +156,22 @@ function App() {
           tmpPitsGems[lastIndex] = 0;
           tmpPitsGems[lastIndex + 6] = 0;
         }
+
+        i = 0;
+        for (i; i < 6; i++) {
+          sumOfUser2sGems += tmpPitsGems[i];
+        }
+        console.log("2:",sumOfUser2sGems);
+        i = 6;
+        if (sumOfUser2sGems === 0) {
+          for (i; i < 12; i++) {
+            sumOfUser1sGems += tmpPitsGems[i];
+            tmpPitsGems[i] = 0;
+          }
+          tmpPitsGems[13] = tmpPitsGems[13] + sumOfUser1sGems;
+          setPitsEmpty(true);
+        }
+
         return tmpPitsGems;
       }
     });
@@ -154,92 +186,76 @@ function App() {
     });
   };
 
-  let pitsEmpty = false,
-    i = 0,
-    sumOfUser1sPits = 0,
-    sumOfUser2sPits = 0;
-  for (i; i < 6; i++) {
-    sumOfUser1sPits += pitsGems[i];
-  }
-
-  i = 6;
-
-  for (i; i < 12; i++) {
-    sumOfUser2sPits += pitsGems[i];
-  }
-
-  pitsEmpty =
-    (sumOfUser1sPits === 0 || sumOfUser2sPits === 0) &&
-    pitsGems[12] + pitsGems[13] !== 0
-      ? true
-      : false;
-
   return (
     <div>
       {!pitsEmpty ? (
         <div>
-      <PlayerName playersTurn={playersTurn} playersName={players.user2} />
-      <Board
-        pitsGems={pitsGems}
-        onPitClick={index => onPitClick(index)}
-        playersTurn={playersTurn}
-        players={players}
-      />
-      <PlayerName playersTurn={playersTurn} playersName={players.user1} />
-      <Button
-        className="startReset"
-        type="button"
-        onClick={gameStatus ? resetGame : handleModalShow}
-      >
-        {gameStatus ? "Baştan Başla" : "Başla"}
-      </Button>
-      <Modal show={showModal} onHide={handleModalClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Oyuncu İsimleri</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Lütfen oyuncu isimlerini giriniz.
-          <br />
-          <br />
-          <Form
-            noValidate
-            validated={validated}
-            id="playersNames"
-            onSubmit={startGame}
+          <PlayerName playersTurn={playersTurn} playersName={players.user2} />
+          <Board
+            pitsGems={pitsGems}
+            onPitClick={index => onPitClick(index)}
+            playersTurn={playersTurn}
+            players={players}
+          />
+          <PlayerName playersTurn={playersTurn} playersName={players.user1} />
+          <Button
+            className="startReset"
+            type="button"
+            onClick={gameStatus ? resetGame : handleModalShow}
           >
-            <Form.Group controlId="user1">
-              <Form.Control
-                type="text"
-                placeholder="1. Oyuncu"
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="user2">
-              <Form.Control
-                type="text"
-                placeholder="2. Oyuncu"
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleModalClose}>
-            İptal
+            {gameStatus ? "Baştan Başla" : "Başla"}
           </Button>
-          <Button variant="primary" type="submit" form="playersNames">
-            Başla
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      </div>
-      ):(
+          <Modal show={showModal} onHide={handleModalClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Oyuncu İsimleri</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              Lütfen oyuncu isimlerini giriniz.
+              <br />
+              <br />
+              <Form
+                noValidate
+                validated={validated}
+                id="playersNames"
+                onSubmit={startGame}
+              >
+                <Form.Group controlId="user1">
+                  <Form.Control
+                    type="text"
+                    placeholder="1. Oyuncu"
+                    onChange={handleInputChange}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group controlId="user2">
+                  <Form.Control
+                    type="text"
+                    placeholder="2. Oyuncu"
+                    onChange={handleInputChange}
+                    required
+                  />
+                </Form.Group>
+              </Form>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleModalClose}>
+                İptal
+              </Button>
+              <Button variant="primary" type="submit" form="playersNames">
+                Başla
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
+      ) : (
         <div>
-        <span className="heading">{players.user1} : {pitsGems[12]}</span>
-        <br />
-        <span className="heading">{players.user2} : {pitsGems[13]}</span>
+          <span className="heading">
+            {players.user1} : {pitsGems[12]}
+          </span>
+          <br />
+          <span className="heading">
+            {players.user2} : {pitsGems[13]}
+          </span>
         </div>
       )}
     </div>
