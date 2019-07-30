@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mangala Oyunu
 
-## Available Scripts
+Bu oyunu es6 ve reactjs konusunda öğrendiklerimi kullanmak için yaptım.
 
-In the project directory, you can run:
+Projede React Hooks kullandım. React Hooks olarak `useState` ve `useeffect` kullandım.
 
-### `npm start`
+Elimden geldiğince kodu iyileştirmeye çalışacağaım. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Özel Teşekkürler
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Volkan ŞENGÜL
+Yazılım alanında, bilgi ve tecrübelerini bizlerle paylaşarak, ülkem insanına sunmuş olduğu hizmet ve fekarlıklarla gönüllerde taht kurmuş, sayesinde (youtube videoları) React öğrendiğim Volkan ŞENGÜL hocam. 
 
-### `npm test`
+[@valkansengul](https://twitter.com/volkansengul)
+[https://www.youtube.com/volkansengul](https://www.youtube.com/volkansengul)
+[https://volkansengul.com/](https://volkansengul.com/)
+[https://github.com/volkansengul](https://github.com/volkansengul)
+---
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Üstün ÖZGÜR
+React ve es6 öğrenmeye başladığımda Youtube videoları ve medium makalelerinden faydalandığım ülkemizin medarı iftiharı Üstün ÖZGÜR hocam.
 
-### `npm run build`
+[@UstunOzgur](https://twitter.com/ustunozgur)
+[GitHub](https://github.com/ustun)
+---
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Gencebay DEMİR
+Yanında olduğum her saniye gayretinden, bilgisinden, tecrübesinden, kişiliğinden feyz aldığım, ülkemizin saklı cevheri Gencebay DEMİR.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+[https://github.com/gencebay](https://github.com/gencebay)
+[https://twitter.com/gencebaydemir/](https://twitter.com/gencebaydemir/)
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Taha İPEK
+Kardeşim, mesai arkadaşım, motivasyon kaynağım, güzel insan; Taha İPEK.
 
-### `npm run eject`
+[https://twitter.com/_tipek](https://twitter.com/_tipek)
+[https://github.com/tahaipek](https://github.com/tahaipek)
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Ve can yoldaşlarım Ankara IT Hacıları ;)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Mangala Oyun Kuralları
+Oyunun kuralları konusunda biraz karışıklık var, farklı sitelerde farklı kurallardan bahsedilmiş. Ben aşağıdaki kurallara göre oyunu yazdım.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Kura neticesinde başlama hakkı kazanan oyuncu kendi bölgesinde bulunan istediği kuyudan 4 adet taşı alır. Bir adet taşı aldığı kuyuya bırakıp saatin tersi yönünde, yani sağa doğru her bir kuyuya birer adet taş bırakarak elindeki taşlar bitene kadar dağıtır. Elindeki son taş hazinesine denk gelirse, oyuncu tekrar oynama hakkına sahip olur. Oyuncunun kuyusunda tek taş varsa, sırası geldiğinde bu taşı sağındaki kuyuya taşıyabilir. Hamle sırası rakibine geçer. Her seferinde oyuncunun elinde kalan son taş oyunun kaderini belirler.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. TEMEL KURAL: Hamle sırası gelen oyuncu kendi kuyusundan aldığı taşları dağıtırken elinde taş kaldıysa, rakibinin bölgesindeki kuyulara da taş bırakmaya devam eder. Oyuncunun elindeki son taş, rakibinin bölgesinde denk geldiği kuyudaki taşların sayısını çift sayı yaparsa (2, 4, 6, 8 gibi) oyuncu bu kuyuda yer alan tüm taşların sahibi olur ve onları kendi hazinesine koyar. Hamle sırası rakibine geçer.
 
-## Learn More
+3. TEMEL KURAL: Oyuncu taşları dağıtırken elinde kalan son taş, yine kendi bölgesinde yer alan boş bir kuyuya denk gelirse ve eğer boş kuyusunun karşısındaki kuyuda da rakibine ait taş varsa, hem rakibinin kuyusundaki taşları alır, hem de kendi boş kuyusuna bıraktığı taşı alıp hazinesine koyar. Hamle sırası rakibine geçer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. TEMEL KURAL: Oyunculardan herhangi birinin bölgesinde yer alan taşlar bittiğinde oyun seti biter. Oyunda kendi bölgesinde taşları ilk biten oyuncu, rakibinin bölgesinde bulunan tüm taşları da kazanır. Dolayısıyla, oyunun dinamiği son ana kadar hiç düşmez.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Mangala Oyunu 5 set olarak oynanır.
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Oyunu kazanan oyuncu (1) puan, kaybeden (0) puan ve berabere bitiren oyuncular yarım (0,5) puan alır.
