@@ -11,7 +11,7 @@ Elimden geldiğince kodu iyileştirmeye çalışacağaım.
 ### Volkan ŞENGÜL
 Yazılım alanında, bilgi ve tecrübelerini bizlerle paylaşarak, ülkem insanına sunmuş olduğu hizmet ve fekarlıklarla gönüllerde taht kurmuş, sayesinde (youtube videoları) React öğrendiğim Volkan ŞENGÜL hocam. 
 
-[@volkansengul](https://twitter.com/volkansengul)
+[https://twitter.com/volkansengul](https://twitter.com/volkansengul)
 
 [https://www.youtube.com/volkansengul](https://www.youtube.com/volkansengul)
 
@@ -24,18 +24,18 @@ Yazılım alanında, bilgi ve tecrübelerini bizlerle paylaşarak, ülkem insan�
 ### Üstün ÖZGÜR
 React ve es6 öğrenmeye başladığımda Youtube videoları ve medium makalelerinden faydalandığım ülkemizin medarı iftiharı Üstün ÖZGÜR hocam.
 
-[@UstunOzgur](https://twitter.com/ustunozgur)
+[https://twitter.com/ustunozgur](https://twitter.com/ustunozgur)
 
-[GitHub](https://github.com/ustun)
+[https://github.com/ustun](https://github.com/ustun)
 
 ---
 
 ### Gencebay DEMİR
 Yanında olduğum her saniye gayretinden, bilgisinden, tecrübesinden, kişiliğinden feyz aldığım, ülkemizin saklı cevheri Gencebay DEMİR.
 
-[https://github.com/gencebay](https://github.com/gencebay)
-
 [https://twitter.com/gencebaydemir/](https://twitter.com/gencebaydemir/)
+
+[https://github.com/gencebay](https://github.com/gencebay)
 
 ---
 
