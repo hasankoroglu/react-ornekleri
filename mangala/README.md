@@ -18,27 +18,34 @@ Yazılım alanında, bilgi ve tecrübelerini bizlerle paylaşarak, ülkem insan�
 [https://volkansengul.com/](https://volkansengul.com/)
 
 [https://github.com/volkansengul](https://github.com/volkansengul)
+
 ---
 
 ### Üstün ÖZGÜR
 React ve es6 öğrenmeye başladığımda Youtube videoları ve medium makalelerinden faydalandığım ülkemizin medarı iftiharı Üstün ÖZGÜR hocam.
 
 [@UstunOzgur](https://twitter.com/ustunozgur)
+
 [GitHub](https://github.com/ustun)
+
 ---
 
 ### Gencebay DEMİR
 Yanında olduğum her saniye gayretinden, bilgisinden, tecrübesinden, kişiliğinden feyz aldığım, ülkemizin saklı cevheri Gencebay DEMİR.
 
 [https://github.com/gencebay](https://github.com/gencebay)
+
 [https://twitter.com/gencebaydemir/](https://twitter.com/gencebaydemir/)
+
 ---
 
 ### Taha İPEK
 Kardeşim, mesai arkadaşım, motivasyon kaynağım, güzel insan; Taha İPEK.
 
 [https://twitter.com/_tipek](https://twitter.com/_tipek)
+
 [https://github.com/tahaipek](https://github.com/tahaipek)
+
 ---
 
 Ve can yoldaşlarım Ankara IT Hacıları ;)
