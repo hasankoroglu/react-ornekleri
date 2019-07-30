@@ -2,7 +2,7 @@
 
 Bu oyunu es6 ve reactjs konusunda öğrendiklerimi kullanmak için yaptım.
 
-Projede React Hooks kullandım. React Hooks olarak `useState` ve `useeffect` kullandım.
+Projede React Hooks kullandım. React Hooks olarak `useState` ve `useEffect` kullandım.
 
 Elimden geldiğince kodu iyileştirmeye çalışacağaım. 
 
@@ -11,9 +11,12 @@ Elimden geldiğince kodu iyileştirmeye çalışacağaım.
 ### Volkan ŞENGÜL
 Yazılım alanında, bilgi ve tecrübelerini bizlerle paylaşarak, ülkem insanına sunmuş olduğu hizmet ve fekarlıklarla gönüllerde taht kurmuş, sayesinde (youtube videoları) React öğrendiğim Volkan ŞENGÜL hocam. 
 
-[@valkansengul](https://twitter.com/volkansengul)
+[@volkansengul](https://twitter.com/volkansengul)
+
 [https://www.youtube.com/volkansengul](https://www.youtube.com/volkansengul)
+
 [https://volkansengul.com/](https://volkansengul.com/)
+
 [https://github.com/volkansengul](https://github.com/volkansengul)
 ---
 
