@@ -73,7 +73,11 @@ function App() {
     let nextIndex;
     setPitsGems(pitsGems => {
       let tmpPitsGems = [...pitsGems];
-      let nextPits, lastIndex, lastIndexGems, sumOfUser1sGems=0, sumOfUser2sGems=0;
+      let nextPits,
+        lastIndex,
+        lastIndexGems,
+        sumOfUser1sGems = 0,
+        sumOfUser2sGems = 0;
       let currentPitGems = tmpPitsGems[param];
 
       if (currentPitGems > 1) {
@@ -161,7 +165,7 @@ function App() {
         for (i; i < 6; i++) {
           sumOfUser2sGems += tmpPitsGems[i];
         }
-        
+
         i = 6;
         if (sumOfUser2sGems === 0) {
           for (i; i < 12; i++) {
