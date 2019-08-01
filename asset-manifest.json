@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-ornekleri/static/css/main.11175ce6.chunk.css",
+    "main.js": "/react-ornekleri/static/js/main.279b9b61.chunk.js",
+    "main.js.map": "/react-ornekleri/static/js/main.279b9b61.chunk.js.map",
+    "runtime~main.js": "/react-ornekleri/static/js/runtime~main.cb4ea703.js",
+    "runtime~main.js.map": "/react-ornekleri/static/js/runtime~main.cb4ea703.js.map",
+    "static/js/2.3310f33a.chunk.js": "/react-ornekleri/static/js/2.3310f33a.chunk.js",
+    "static/js/2.3310f33a.chunk.js.map": "/react-ornekleri/static/js/2.3310f33a.chunk.js.map",
+    "index.html": "/react-ornekleri/index.html",
+    "precache-manifest.9a977cb627717f525382c9e9364d91ae.js": "/react-ornekleri/precache-manifest.9a977cb627717f525382c9e9364d91ae.js",
+    "service-worker.js": "/react-ornekleri/service-worker.js",
+    "static/css/main.11175ce6.chunk.css.map": "/react-ornekleri/static/css/main.11175ce6.chunk.css.map"
+  }
+}
