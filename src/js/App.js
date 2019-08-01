@@ -129,8 +129,14 @@ function App() {
             tmpPitsGems[i] = 0;
           }
           tmpPitsGems[12] = tmpPitsGems[12] + sumOfUser2sGems;
-          setPitsEmpty(true);
         }
+
+        setPitsEmpty(prevState=>{
+          if (sumOfUser2sGems === 0) {
+            prevState = true;
+          }
+          return prevState;
+        });
 
         return tmpPitsGems;
       } else {
@@ -173,8 +179,14 @@ function App() {
             tmpPitsGems[i] = 0;
           }
           tmpPitsGems[13] = tmpPitsGems[13] + sumOfUser1sGems;
-          setPitsEmpty(true);
         }
+
+        setPitsEmpty(prevState=>{
+          if (sumOfUser2sGems === 0) {
+            prevState = true;
+          }
+          return prevState;
+        });
 
         return tmpPitsGems;
       }
