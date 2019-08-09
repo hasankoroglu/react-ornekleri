@@ -1,13 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import ContextExample from "./context"
+import Reduce from "./reduce"
+import Composition from "./composition"
 
 function App() {
   return (
     <Router>
         <Header/>
         <Route path="/" exact component={Home} />
-        <Route path="/context/" component={ContextExample} />
+        <Route path="/reduce/" component={Reduce} />
+        <Route path="/composition/" component={Composition} />
     </Router>
   );
 }
@@ -23,7 +25,10 @@ const Header = () => {
         <NavLink exact to="/" className="nav-link" activeClassName="active">Anasayfa</NavLink>
       </li>
       <li className="nav-item">
-        <NavLink exact to="/context/" className="nav-link" activeClassName="active">Context</NavLink>
+        <NavLink exact to="/reduce/" className="nav-link" activeClassName="active">Reduce</NavLink>
+      </li>
+      <li className="nav-item">
+        <NavLink exact to="/composition/" className="nav-link" activeClassName="active">Composition</NavLink>
       </li>
     </ul>
   </nav>);
