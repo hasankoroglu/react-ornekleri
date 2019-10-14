@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Reduce from "./reduce"
 import Composition from "./composition"
+import SharedState from "./sharedState"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/reduce/" component={Reduce} />
         <Route path="/composition/" component={Composition} />
+        <Route path="/sharedState/" component={SharedState} />
     </Router>
   );
 }
@@ -29,6 +31,9 @@ const Header = () => {
       </li>
       <li className="nav-item">
         <NavLink exact to="/composition/" className="nav-link" activeClassName="active">Composition</NavLink>
+      </li>
+      <li className="nav-item">
+        <NavLink exact to="/sharedState/" className="nav-link" activeClassName="active">Shared State</NavLink>
       </li>
     </ul>
   </nav>);
