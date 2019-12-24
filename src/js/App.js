@@ -5,7 +5,7 @@ import Reduce from "./reduce"
 
 function App() {
   return (
-    <Router>
+    <Router basename="/react-ornekleri">
       <div className="wrapper d-flex align-items-stretch">
         <SideBar />
         <Content />
@@ -47,10 +47,10 @@ const SideBar = () => {
         <h3>React Örnekleri</h3>
         <ul className="list-unstyled components mb-5">
           <li>
-            <NavLink exact to="/react-ornekleri/" activeClassName="active"><Octicon icon={Home} size="small" className="mr-3" />Anasayfa</NavLink>
+            <NavLink exact to="/" activeClassName="active"><Octicon icon={Home} size="small" className="mr-3" />Anasayfa</NavLink>
           </li>
           <li>
-            <NavLink to="/react-ornekleri/reduce/" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>Reduce</NavLink>
+            <NavLink to="/reduce" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>Reduce</NavLink>
           </li>
         </ul>
         <div className="footer"></div>
