@@ -22,7 +22,7 @@ const Content = () => {
   return(
     <div id="content" className="p-4 p-md-5 pt-5">
       <Route path="/" exact component={HomePage} />
-      <Route path="/reduce" exact component={Reduce} />
+      <Route path="/reduce" component={Reduce} />
     </div>
   );
 }
@@ -47,10 +47,10 @@ const SideBar = () => {
         <h3>React Örnekleri</h3>
         <ul className="list-unstyled components mb-5">
           <li>
-            <NavLink exact to="/" activeClassName="active"><Octicon icon={Home} size="small" className="mr-3" />Anasayfa</NavLink>
+            <NavLink exact to="/react-ornekleri/" activeClassName="active"><Octicon icon={Home} size="small" className="mr-3" />Anasayfa</NavLink>
           </li>
           <li>
-            <NavLink to="/reduce/" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>Reduce</NavLink>
+            <NavLink to="/react-ornekleri/reduce/" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>Reduce</NavLink>
           </li>
         </ul>
         <div className="footer"></div>
