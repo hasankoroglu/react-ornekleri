@@ -1,75 +1,62 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import Octicon, {ThreeBars} from "@primer/octicons-react";
+import Octicon, { ThreeBars, Home, ArrowRight } from "@primer/octicons-react";
+import Reduce from "./reduce"
 
 function App() {
-
-  const [sideMenuClass,SetSideMenuClass] = useState(null);
-
-  const toggleMenu = () => {
-    const newClass = sideMenuClass == null ? "menuDisplayed" : null;
-    SetSideMenuClass(newClass);
-  }
-
   return (
     <Router>
-      <div id="wrapper" className={sideMenuClass}>
-      <SideBar />
-      <div id="page-content-wrapper">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-12">
-              <button onClick={()=>toggleMenu()} className="btn-sidemenu">
-            <Octicon icon={ThreeBars} size="large"/>
-            </button>
-              <Route path="/" exact component={Home} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="wrapper d-flex align-items-stretch">
+        <SideBar />
+        <Content />
       </div>
     </Router>
   );
 }
 
-const Home = () => {
+const HomePage = () => {
   return <h2>Anasayfa</h2>;
 };
 
+const Content = () => {
+  return(
+    <div id="content" className="p-4 p-md-5 pt-5">
+      <Route path="/" exact component={HomePage} />
+      <Route path="/reduce" exact component={Reduce} />
+    </div>
+  );
+}
+
 const SideBar = () => {
+  const [sideMenuClass, SetSideMenuClass] = useState(null);
+
+  const toggleMenu = () => {
+    const newClass = sideMenuClass == null ? "active" : null;
+    SetSideMenuClass(newClass);
+  };
+
   return (
-    <nav id="sidebar-wrapper">
-      <ul className="sidebar-nav">
-        <li>
-          <NavLink exact to="/" className="nav-link" activeClassName="active">Anasayfa</NavLink>
-        </li>
-        <li>
-        <NavLink exact to="/reduce/" className="nav-link" activeClassName="active">Reduce</NavLink>
-        </li>
-        <li>
-        <NavLink exact to="/composition/" className="nav-link" activeClassName="active">Composition</NavLink>
-        </li>
-      </ul>
+    <nav id="sidebar" className={sideMenuClass}>
+      <div className="custom-menu">
+        <button type="button" id="sidebarCollapse" onClick={() => toggleMenu()} className="btn btn-primary">
+          <Octicon icon={ThreeBars} size="small" />
+          <span className="sr-only">Toggle Menu</span>
+        </button>
+      </div>
+      <div className="p-4">
+        <h3>React Örnekleri</h3>
+        <ul className="list-unstyled components mb-5">
+          <li>
+            <NavLink exact to="/" activeClassName="active"><Octicon icon={Home} size="small" className="mr-3" />Anasayfa</NavLink>
+          </li>
+          <li>
+            <NavLink to="/reduce/" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>Reduce</NavLink>
+          </li>
+        </ul>
+        <div className="footer"></div>
+      </div>
     </nav>
   );
 };
-
-/*
-const Header = () => {
-  return(<nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <ul className="navbar-nav">
-      <li className="nav-item">
-        <NavLink exact to="/" className="nav-link" activeClassName="active">Anasayfa</NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink exact to="/reduce/" className="nav-link" activeClassName="active">Reduce</NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink exact to="/composition/" className="nav-link" activeClassName="active">Composition</NavLink>
-      </li>
-    </ul>
-  </nav>);
-}
-*/
 
 export default App;

@@ -29,7 +29,12 @@ const Reduce = () => {
   console.timeEnd("bigReduce");
 
   //console.log(reducedBigArray);
-  return <div />;
+  return(
+    <div>
+    <h1>Reduce Örneği</h1>
+    <p>Sonuçları görmek için lütfen console ekranına bakınız.</p>
+    </div>
+  );
 };
 
 export default Reduce;
