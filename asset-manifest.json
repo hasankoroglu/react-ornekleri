@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-ornekleri/static/css/main.f05a3044.chunk.css",
-    "main.js": "/react-ornekleri/static/js/main.21be4431.chunk.js",
-    "main.js.map": "/react-ornekleri/static/js/main.21be4431.chunk.js.map",
+    "main.js": "/react-ornekleri/static/js/main.645353e0.chunk.js",
+    "main.js.map": "/react-ornekleri/static/js/main.645353e0.chunk.js.map",
     "runtime-main.js": "/react-ornekleri/static/js/runtime-main.e0003632.js",
     "runtime-main.js.map": "/react-ornekleri/static/js/runtime-main.e0003632.js.map",
     "static/js/2.e9483b9c.chunk.js": "/react-ornekleri/static/js/2.e9483b9c.chunk.js",
     "static/js/2.e9483b9c.chunk.js.map": "/react-ornekleri/static/js/2.e9483b9c.chunk.js.map",
     "index.html": "/react-ornekleri/index.html",
-    "precache-manifest.3fbfb0d89492dcbd1b0f943148ece684.js": "/react-ornekleri/precache-manifest.3fbfb0d89492dcbd1b0f943148ece684.js",
+    "precache-manifest.994d015822f6813b55b20a07b82f6a2e.js": "/react-ornekleri/precache-manifest.994d015822f6813b55b20a07b82f6a2e.js",
     "service-worker.js": "/react-ornekleri/service-worker.js",
     "static/css/main.f05a3044.chunk.css.map": "/react-ornekleri/static/css/main.f05a3044.chunk.css.map",
     "static/js/2.e9483b9c.chunk.js.LICENSE": "/react-ornekleri/static/js/2.e9483b9c.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e0003632.js",
     "static/js/2.e9483b9c.chunk.js",
     "static/css/main.f05a3044.chunk.css",
-    "static/js/main.21be4431.chunk.js"
+    "static/js/main.645353e0.chunk.js"
   ]
 }
