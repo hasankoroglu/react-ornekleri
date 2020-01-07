@@ -184,3 +184,19 @@ body {
   margin-bottom: 2px;
   width: 16px;
  }
+
+ .bulb {
+   background: transparent url(../img/bulb.png) no-repeat 0 0;
+   cursor:pointer;
+   width: 106px;
+   height: 180px;
+   display: block;
+ }
+
+ .bulb.on {
+   background-position-x: -130px;
+ }
+
+ .bulb.off {
+  background-position-x: 0;
+ }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Octicon, { ThreeBars, Home, ArrowRight } from "@primer/octicons-react";
-import Reduce from "./reduce"
+import UseContextExample from "./useContext"
 
-function App() {
+export default function App() {
   return (
     <Router basename="/react-ornekleri">
       <div className="wrapper d-flex align-items-stretch">
@@ -22,7 +22,7 @@ const Content = () => {
   return(
     <div id="content" className="p-4 p-md-5 pt-5">
       <Route path="/" exact component={HomePage} />
-      <Route path="/reduce" component={Reduce} />
+      <Route path="/useContext" component={UseContextExample} />
     </div>
   );
 }
@@ -50,7 +50,7 @@ const SideBar = () => {
             <NavLink exact to="/" activeClassName="active"><Octicon icon={Home} size="small" className="mr-3" />Anasayfa</NavLink>
           </li>
           <li>
-            <NavLink to="/reduce" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>Reduce</NavLink>
+            <NavLink to="/useContext" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>useContext</NavLink>
           </li>
         </ul>
         <div className="footer"></div>
@@ -58,5 +58,3 @@ const SideBar = () => {
     </nav>
   );
 };
-
-export default App;
