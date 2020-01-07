@@ -25,6 +25,8 @@ function Bulb() {
     <div>
       <img className={`bulb ${ctxBulb.bulbStatus ? `on` : `off`}`} alt="" src={blank} onClick={()=>ctxBulb.toggleLight()}/>
       {`Turn ${ctxBulb.bulbStatus ? `off` : `on`} the light!`}
+      <hr />
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/kOL7aeIDruA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   );
 }

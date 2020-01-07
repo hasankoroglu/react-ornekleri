@@ -15,7 +15,12 @@ export default function App() {
 }
 
 const HomePage = () => {
-  return <h2>Anasayfa</h2>;
+  return (
+    <div>
+    <h2>Anasayfa</h2>
+    <p>Kaynak Kodlar: <a href="https://github.com/hasankoroglu/react-ornekleri" target="_blank" rel="noopener noreferrer">https://github.com/hasankoroglu/react-ornekleri</a></p> 
+    </div>
+    );
 };
 
 const Content = () => {
