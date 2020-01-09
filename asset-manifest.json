@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/react-ornekleri/static/css/main.fb41a371.chunk.css",
-    "main.js": "/react-ornekleri/static/js/main.13e00027.chunk.js",
-    "main.js.map": "/react-ornekleri/static/js/main.13e00027.chunk.js.map",
+    "main.js": "/react-ornekleri/static/js/main.531c95eb.chunk.js",
+    "main.js.map": "/react-ornekleri/static/js/main.531c95eb.chunk.js.map",
     "runtime-main.js": "/react-ornekleri/static/js/runtime-main.e0003632.js",
     "runtime-main.js.map": "/react-ornekleri/static/js/runtime-main.e0003632.js.map",
-    "static/js/2.155bfa8b.chunk.js": "/react-ornekleri/static/js/2.155bfa8b.chunk.js",
-    "static/js/2.155bfa8b.chunk.js.map": "/react-ornekleri/static/js/2.155bfa8b.chunk.js.map",
+    "static/js/2.677fae1f.chunk.js": "/react-ornekleri/static/js/2.677fae1f.chunk.js",
+    "static/js/2.677fae1f.chunk.js.map": "/react-ornekleri/static/js/2.677fae1f.chunk.js.map",
     "index.html": "/react-ornekleri/index.html",
-    "precache-manifest.01405ec47142974a107a9d521d9425f3.js": "/react-ornekleri/precache-manifest.01405ec47142974a107a9d521d9425f3.js",
+    "precache-manifest.1782394f039d78ee7c34c332ff5c5d8e.js": "/react-ornekleri/precache-manifest.1782394f039d78ee7c34c332ff5c5d8e.js",
     "service-worker.js": "/react-ornekleri/service-worker.js",
     "static/css/main.fb41a371.chunk.css.map": "/react-ornekleri/static/css/main.fb41a371.chunk.css.map",
-    "static/js/2.155bfa8b.chunk.js.LICENSE": "/react-ornekleri/static/js/2.155bfa8b.chunk.js.LICENSE",
+    "static/js/2.677fae1f.chunk.js.LICENSE": "/react-ornekleri/static/js/2.677fae1f.chunk.js.LICENSE",
     "static/media/index.css": "/react-ornekleri/static/media/bulb.3e8cb6c7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.e0003632.js",
-    "static/js/2.155bfa8b.chunk.js",
+    "static/js/2.677fae1f.chunk.js",
     "static/css/main.fb41a371.chunk.css",
-    "static/js/main.13e00027.chunk.js"
+    "static/js/main.531c95eb.chunk.js"
   ]
 }
