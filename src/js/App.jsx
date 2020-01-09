@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Octicon, { ThreeBars, Home, ArrowRight } from "@primer/octicons-react";
-import UseContextExample from "./useContext"
+import UseContextExample from "./useContext";
+import UseReducerCounter from "./useReducer";
+import UseRefExample from "./useRef";
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ const Content = () => {
     <div id="content" className="p-4 p-md-5 pt-5">
       <Route path="/" exact component={HomePage} />
       <Route path="/useContext" component={UseContextExample} />
+      <Route path="/useReducer" component={UseReducerCounter} />
+      <Route path="/useRef" component={UseRefExample} />
     </div>
   );
 }
@@ -56,6 +60,12 @@ const SideBar = () => {
           </li>
           <li>
             <NavLink to="/useContext" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>useContext</NavLink>
+          </li>
+          <li>
+            <NavLink to="/useReducer" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>useReducer</NavLink>
+          </li>
+          <li>
+            <NavLink to="/useRef" activeClassName="active"><Octicon icon={ArrowRight} size="small" className="mr-3"/>useRef</NavLink>
           </li>
         </ul>
         <div className="footer"></div>
